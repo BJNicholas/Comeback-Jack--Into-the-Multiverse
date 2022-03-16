@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameObject characterModel;
+    public GameObject characterModel; //jack
+    public GameObject jillModel; //jill
+
+    public Transform jackPos;
+    public Transform jillPos;
 
     public float speed;
     public float jumpHeight;
@@ -68,6 +72,22 @@ public class PlayerController : MonoBehaviour
             //animation
             characterModel.GetComponent<Animator>().Play("Player-Jump");
         }
+
+        //changing character
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return))
+        {
+            if (jillModel.activeInHierarchy)
+            {
+                EnableJack();
+            }
+            else if (characterModel.activeInHierarchy)
+            {
+                EnableJill();
+            }
+        }
+
+        Vector3 pos = transform.position;
+        pos = characterModel.transform.position;
     }
 
     private void FixedUpdate()
@@ -89,5 +109,29 @@ public class PlayerController : MonoBehaviour
         GameManager.instance.livesLeft -= 1;
         GameManager.instance.Respawn();
         Destroy(gameObject);
+    }
+
+    public void EnableJill()
+    {           
+        if (!jillModel.activeInHierarchy)
+        {
+            jillModel.SetActive(true);
+            characterModel.SetActive(false);
+
+            jillModel.transform.position = jackPos.position;
+        }
+
+    }
+
+    public void EnableJack()
+    {
+        if (!jillModel.activeInHierarchy)
+        {
+            characterModel.SetActive(true);
+            jillModel.SetActive(false);
+
+            characterModel.transform.position = jillPos.position;
+        }
+
     }
 }
