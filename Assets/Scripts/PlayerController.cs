@@ -73,21 +73,6 @@ public class PlayerController : MonoBehaviour
             characterModel.GetComponent<Animator>().Play("Player-Jump");
         }
 
-        //changing character
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return))
-        {
-            if (jillModel.activeInHierarchy)
-            {
-                EnableJack();
-            }
-            else if (characterModel.activeInHierarchy)
-            {
-                EnableJill();
-            }
-        }
-
-        Vector3 pos = transform.position;
-        pos = characterModel.transform.position;
     }
 
     private void FixedUpdate()

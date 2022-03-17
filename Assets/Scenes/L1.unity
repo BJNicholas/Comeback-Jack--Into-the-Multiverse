@@ -749,7 +749,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 61.47711, y: 61.47711}
+  m_AnchoredPosition: {x: 61.47705, y: 61.47711}
   m_SizeDelta: {x: 122.954285, y: 122.954285}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &217527185
@@ -4888,6 +4888,8 @@ MonoBehaviour:
   coinsCollected: 0
   characterPrefab: {fileID: 1023133123477743684, guid: ad7003cf0676b4647a928a94d24f7ad3, type: 3}
   deadCharacter: {fileID: 3270109207334350892, guid: 535c02b45e3f8604fbe623eaf4a33829, type: 3}
+  characterModel: {fileID: 1742125075}
+  jillModel: {fileID: 1023133123654893608}
   respawnPoint: {fileID: 772053337}
 --- !u!4 &574076563
 Transform:
@@ -11826,7 +11828,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1101860088
@@ -12153,7 +12155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1265694717
@@ -13593,6 +13595,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 48483383840244977, guid: 6d20395d7f9060240bfbc7dfdec8aefd, type: 3}
   m_PrefabInstance: {fileID: 564446153}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1742125075 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1023133124114706363, guid: ad7003cf0676b4647a928a94d24f7ad3, type: 3}
+  m_PrefabInstance: {fileID: 1023133123654893606}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1752012763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13695,7 +13702,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1760314916 stripped
@@ -14298,6 +14305,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2009678057}
   m_CullTransparentMesh: 1
+--- !u!4 &2075723274 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1023133124114706361, guid: ad7003cf0676b4647a928a94d24f7ad3, type: 3}
+  m_PrefabInstance: {fileID: 1023133123654893606}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2098865863
 GameObject:
   m_ObjectHideFlags: 0
@@ -14594,6 +14606,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1023133123477743680, guid: ad7003cf0676b4647a928a94d24f7ad3, type: 3}
+      propertyPath: jackPos
+      value: 
+      objectReference: {fileID: 2075723274}
+    - target: {fileID: 1023133123477743680, guid: ad7003cf0676b4647a928a94d24f7ad3, type: 3}
+      propertyPath: jillPos
+      value: 
+      objectReference: {fileID: 1023133123654893607}
+    - target: {fileID: 1023133123477743680, guid: ad7003cf0676b4647a928a94d24f7ad3, type: 3}
+      propertyPath: jillModel
+      value: 
+      objectReference: {fileID: 1023133123654893608}
     - target: {fileID: 1023133123477743683, guid: ad7003cf0676b4647a928a94d24f7ad3, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -14644,6 +14668,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad7003cf0676b4647a928a94d24f7ad3, type: 3}
+--- !u!4 &1023133123654893607 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1990242876285337524, guid: ad7003cf0676b4647a928a94d24f7ad3, type: 3}
+  m_PrefabInstance: {fileID: 1023133123654893606}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1023133123654893608 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9018916556197061473, guid: ad7003cf0676b4647a928a94d24f7ad3, type: 3}
+  m_PrefabInstance: {fileID: 1023133123654893606}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1721997641029622248
 PrefabInstance:
   m_ObjectHideFlags: 0
