@@ -13,9 +13,6 @@ public class GameManager : MonoBehaviour
     public GameObject characterPrefab;
     public GameObject deadCharacter;
 
-    public GameObject characterModel; //jack
-    public GameObject jillModel; //jill
-
     [Header("Level Details")]
     public Transform respawnPoint;
 
@@ -31,17 +28,6 @@ public class GameManager : MonoBehaviour
         if(livesLeft > 0)
         {
             GameObject newPlayer = Instantiate(characterPrefab, respawnPoint.position, Quaternion.identity);
-
-            //changing character
-            if (jillModel.activeInHierarchy)
-            {
-                EnableJack();
-            }
-            else if (characterModel.activeInHierarchy)
-            {
-                EnableJill();
-            }
-
             Camera.main.GetComponent<CameraController>().target = newPlayer.transform;
         }
         else
@@ -53,24 +39,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void EnableJill()
-    {
-        if (!jillModel.activeInHierarchy)
-        {
-            jillModel.SetActive(true);
-            characterModel.SetActive(false);
-        }
-
-    }
-
-    public void EnableJack()
-    {
-        if (!characterModel.activeInHierarchy)
-        {
-            characterModel.SetActive(true);
-            jillModel.SetActive(false);
-        }
-
-    }
+    
 
 }

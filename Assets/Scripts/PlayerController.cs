@@ -93,6 +93,19 @@ public class PlayerController : MonoBehaviour
         GameObject body = Instantiate(GameManager.instance.deadCharacter, transform.position, Quaternion.identity);
         GameManager.instance.livesLeft -= 1;
         GameManager.instance.Respawn();
+
+        //changing character
+        if (jillModel.activeInHierarchy)
+        {
+            
+            EnableJack();
+        }
+        else if (characterModel.activeInHierarchy)
+        {
+            
+            EnableJill();
+        }
+
         Destroy(gameObject);
     }
 
@@ -100,6 +113,7 @@ public class PlayerController : MonoBehaviour
     {           
         if (!jillModel.activeInHierarchy)
         {
+            Debug.Log("CHange to Jill");
             jillModel.SetActive(true);
             characterModel.SetActive(false);
 
@@ -110,8 +124,9 @@ public class PlayerController : MonoBehaviour
 
     public void EnableJack()
     {
-        if (!jillModel.activeInHierarchy)
+        if (!characterModel.activeInHierarchy)
         {
+            Debug.Log("CHange to Jack");
             characterModel.SetActive(true);
             jillModel.SetActive(false);
 
