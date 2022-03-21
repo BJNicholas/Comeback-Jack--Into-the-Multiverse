@@ -95,12 +95,12 @@ public class PlayerController : MonoBehaviour
         GameManager.instance.Respawn();
 
         //changing character
-        if (jillModel.activeInHierarchy)
+        if (jillModel.activeInHierarchy == true)
         {
             
             EnableJack();
         }
-        else if (characterModel.activeInHierarchy)
+        else if (characterModel.activeInHierarchy == true)
         {
             
             EnableJill();
@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
     {           
         if (!jillModel.activeInHierarchy)
         {
-            Debug.Log("CHange to Jill");
+            Debug.Log("Change to Jill");
             jillModel.SetActive(true);
             characterModel.SetActive(false);
 
@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!characterModel.activeInHierarchy)
         {
-            Debug.Log("CHange to Jack");
+            Debug.Log("Change to Jack");
             characterModel.SetActive(true);
             jillModel.SetActive(false);
 
