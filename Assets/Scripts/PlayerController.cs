@@ -114,8 +114,8 @@ public class PlayerController : MonoBehaviour
         if (!jillModel.activeInHierarchy)
         {
             Debug.Log("Change to Jill");
-            jillModel.SetActive(true);
-            characterModel.SetActive(false);
+            transform.GetChild(1).gameObject.SetActive(true);
+            transform.GetChild(0).gameObject.SetActive(false);
 
             jillModel.transform.position = jackPos.position;
         }
@@ -127,11 +127,15 @@ public class PlayerController : MonoBehaviour
         if (!characterModel.activeInHierarchy)
         {
             Debug.Log("Change to Jack");
-            characterModel.SetActive(true);
-            jillModel.SetActive(false);
+            transform.GetChild(1).gameObject.SetActive(false);
+            transform.GetChild(0).gameObject.SetActive(true);
+
+            //characterModel.SetActive(true);
+            //jillModel.SetActive(false);
 
             characterModel.transform.position = jillPos.position;
         }
+       
 
     }
 }
