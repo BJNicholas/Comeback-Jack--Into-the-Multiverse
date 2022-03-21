@@ -10,5 +10,9 @@ public class Water : MonoBehaviour
         {
             collision.gameObject.GetComponent<PlayerController>().Death();
         }
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }
