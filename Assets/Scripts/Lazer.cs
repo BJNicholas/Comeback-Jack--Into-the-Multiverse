@@ -79,6 +79,10 @@ public class Lazer : MonoBehaviour
             {
                 hit.collider.gameObject.GetComponent<PlayerController>().Death();
             }
+            if(hit.collider.gameObject.tag == "Enemy")
+            {
+                Destroy(hit.collider.gameObject);
+            }
 
             lr.SetPosition(0, transform.position);
             lr.SetPosition(1, hitPoint);
