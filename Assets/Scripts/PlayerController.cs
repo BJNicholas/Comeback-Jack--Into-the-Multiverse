@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameObject characterModel;
+    public GameObject characterModel; //jack
+    public GameObject jillModel; //jill
+
+    public Transform jackPos;
+    public Transform jillPos;
 
     public float speed;
     public float jumpHeight;
@@ -68,6 +72,7 @@ public class PlayerController : MonoBehaviour
             //animation
             characterModel.GetComponent<Animator>().Play("Player-Jump");
         }
+
     }
 
     private void FixedUpdate()
@@ -88,6 +93,49 @@ public class PlayerController : MonoBehaviour
         GameObject body = Instantiate(GameManager.instance.deadCharacter, transform.position, Quaternion.identity);
         GameManager.instance.livesLeft -= 1;
         GameManager.instance.Respawn();
+
+        //changing character
+        if (jillModel.activeInHierarchy == true)
+        {
+            
+            EnableJack();
+        }
+        else if (characterModel.activeInHierarchy == true)
+        {
+            
+            EnableJill();
+        }
+
         Destroy(gameObject);
+    }
+
+    public void EnableJill()
+    {           
+        if (!jillModel.activeInHierarchy)
+        {
+            Debug.Log("Change to Jill");
+            transform.GetChild(1).gameObject.SetActive(true);
+            transform.GetChild(0).gameObject.SetActive(false);
+
+            jillModel.transform.position = jackPos.position;
+        }
+
+    }
+
+    public void EnableJack()
+    {
+        if (!characterModel.activeInHierarchy)
+        {
+            Debug.Log("Change to Jack");
+            transform.GetChild(1).gameObject.SetActive(false);
+            transform.GetChild(0).gameObject.SetActive(true);
+
+            //characterModel.SetActive(true);
+            //jillModel.SetActive(false);
+
+            characterModel.transform.position = jillPos.position;
+        }
+       
+
     }
 }
