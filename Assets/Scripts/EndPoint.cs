@@ -7,7 +7,7 @@ public class EndPoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player") CompleteLevel();
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Jill") CompleteLevel();
     }
 
     public void CompleteLevel()
