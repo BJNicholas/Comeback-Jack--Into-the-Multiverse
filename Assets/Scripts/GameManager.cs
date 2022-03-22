@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public float coinsCollected;
 
     public GameObject characterPrefab;
+    public GameObject jillPrefab;
     public GameObject deadCharacter;
 
     [Header("Level Details")]
@@ -28,6 +29,8 @@ public class GameManager : MonoBehaviour
         if(livesLeft > 0)
         {
             GameObject newPlayer = Instantiate(characterPrefab, respawnPoint.position, Quaternion.identity);
+            GameObject newJill = Instantiate(jillPrefab, respawnPoint.position, Quaternion.identity);
+            newJill.SetActive(false);
             Camera.main.GetComponent<CameraController>().target = newPlayer.transform;
         }
         else

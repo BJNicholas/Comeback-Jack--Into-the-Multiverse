@@ -75,7 +75,7 @@ public class Lazer : MonoBehaviour
         if(hit.collider != null)
         {
             hitPoint = hit.point;
-            if(hit.collider.gameObject.tag == "Player")
+            if(hit.collider.gameObject.tag == "Player" || hit.collider.gameObject.tag == "Jill")
             {
                 hit.collider.gameObject.GetComponent<PlayerController>().Death();
             }
