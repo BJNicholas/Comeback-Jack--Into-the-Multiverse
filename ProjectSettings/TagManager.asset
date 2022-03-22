@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Mid
   - Enemy
+  - Jill
   layers:
   - Default
   - TransparentFX

@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
         if (hit.collider != null)
         {
             float distance = Vector2.Distance(hit.point, gameObject.transform.position);
-            if (distance <= 1 && hit.collider.gameObject.tag != "Player") 
+            if (distance <= 1 && hit.collider.gameObject.tag != "Player" || distance <= 1 && hit.collider.gameObject.tag != "Jill") 
             {
                 Flip();
             }
@@ -32,14 +32,14 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Player" || collision.gameObject.tag == "Jill")
         {
             collision.gameObject.GetComponent<PlayerController>().Death();
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Jill")
         {
             Destroy(gameObject);
         }
