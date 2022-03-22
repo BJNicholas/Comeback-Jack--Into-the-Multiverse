@@ -12198,6 +12198,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jill
       objectReference: {fileID: 0}
+    - target: {fileID: 4740842775790916373, guid: 004be49c85604874d943c20c65c075f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4740842775790916382, guid: 004be49c85604874d943c20c65c075f3, type: 3}
       propertyPath: m_RootOrder
       value: 2
