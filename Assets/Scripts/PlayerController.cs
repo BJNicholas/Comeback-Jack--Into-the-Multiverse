@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameObject characterModel; //jack
-    public GameObject character2Model; //jill
+    public GameObject characterModel;
 
-    public Transform activePos;
-    public Transform inactivePos;
 
     public float speed;
     public float jumpHeight;
@@ -45,7 +42,6 @@ public class PlayerController : MonoBehaviour
             {
                 //animation
                 characterModel.GetComponent<Animator>().Play("Player-Run");
-                characterModel.GetComponent<Animator>().Play("Jill-Run");
             }
         }
         else
@@ -54,7 +50,6 @@ public class PlayerController : MonoBehaviour
             {
                 //animation
                 characterModel.GetComponent<Animator>().Play("Player-Idle");
-                characterModel.GetComponent<Animator>().Play("Jill-Idle");
             }
         }
 
@@ -66,7 +61,6 @@ public class PlayerController : MonoBehaviour
 
             //animation
             characterModel.GetComponent<Animator>().Play("Player-Jump");
-            characterModel.GetComponent<Animator>().Play("Jill-Jump");
             //Audio
             GetComponent<AudioSource>().Play();
         }
@@ -74,22 +68,6 @@ public class PlayerController : MonoBehaviour
         {
             //animation
             characterModel.GetComponent<Animator>().Play("Player-Jump");
-            characterModel.GetComponent<Animator>().Play("Jill-Jump");
-        }
-
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return))
-        {
-            //changing character
-            if (character2Model.activeInHierarchy == true)
-            {
-
-                EnableJack();
-            }
-            else if (characterModel.activeInHierarchy == true)
-            {
-
-                EnableJill();
-            }
         }
 
     }
@@ -113,33 +91,5 @@ public class PlayerController : MonoBehaviour
         GameManager.instance.livesLeft -= 1;
         GameManager.instance.Respawn();
         Destroy(gameObject);
-    }
-
-    public void EnableJill()
-    {           
-        if (!character2Model.activeInHierarchy)
-        {
-            characterModel.SetActive(false);
-            character2Model.SetActive(true);
-
-            character2Model.transform.position = activePos.position;
-        }
-
-    }
-
-    public void EnableJack()
-    {
-        if (!characterModel.activeInHierarchy)
-        {
-            //transform.GetChild(1).gameObject.SetActive(false);
-            //transform.GetChild(0).gameObject.SetActive(true);
-
-            characterModel.SetActive(true);
-            character2Model.SetActive(false);
-
-            characterModel.transform.position = inactivePos.position;
-        }
-       
-
     }
 }
