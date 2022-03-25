@@ -91,5 +91,6 @@ public class PlayerController : MonoBehaviour
         GameManager.instance.livesLeft -= 1;
         GameManager.instance.Respawn();
         Destroy(gameObject);
+        SavedAudio.instance.FindEffetsObjects();
     }
 }
