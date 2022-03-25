@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
         if (hit.collider != null)
         {
             float distance = Vector2.Distance(hit.point, gameObject.transform.position);
-            if (distance <= 1 && hit.collider.gameObject.tag != "Player" || distance <= 1 && hit.collider.gameObject.tag != "Jill") 
+            if (distance <= 1 && hit.collider.gameObject.tag != "Player") 
             {
                 Flip();
             }

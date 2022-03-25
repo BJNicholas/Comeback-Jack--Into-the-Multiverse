@@ -22,6 +22,8 @@ public class SavedAudio : MonoBehaviour
     }
     public void FindEffetsObjects()
     {
+        settings.GetComponent<Settings>().effectsObjects.RemoveAll(AudioSource => AudioSource == null);
+        settings.GetComponent<Settings>().effectsObjects.TrimExcess();
         foreach (AudioSource source in settings.GetComponent<Settings>().allSoundObjects)
         {
             if (source != settings.GetComponent<Settings>().musicSource && !settings.GetComponent<Settings>().effectsObjects.Contains(source))
@@ -29,7 +31,6 @@ public class SavedAudio : MonoBehaviour
                 settings.GetComponent<Settings>().effectsObjects.Add(source);
             }
         }
-        settings.GetComponent<Settings>().effectsObjects.RemoveAll(AudioSource => AudioSource == null);
     }
 
 

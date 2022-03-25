@@ -95,9 +95,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterModel: {fileID: 1023133124114706363}
-  character2Model: {fileID: 4740842775790916373, guid: 004be49c85604874d943c20c65c075f3, type: 3}
-  activePos: {fileID: 1023133123477743683}
-  inactivePos: {fileID: 4740842775790916382, guid: 004be49c85604874d943c20c65c075f3, type: 3}
   speed: 10
   jumpHeight: 5
   grounded: 0
