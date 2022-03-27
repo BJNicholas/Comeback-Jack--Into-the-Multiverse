@@ -5577,7 +5577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0009d651d5ace144c86eaf1dcc58a635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingLives: 5
+  startingLives: 10
   livesLeft: 0
   coinsCollected: 0
   characterPrefab: {fileID: 1023133123477743684, guid: ad7003cf0676b4647a928a94d24f7ad3, type: 3}
