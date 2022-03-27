@@ -9,12 +9,14 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject mainMenuUI;
     [SerializeField] private GameObject tutorialUI;
     [SerializeField] private GameObject selectUI;
+    [SerializeField] private GameObject settingsUI;
 
     private void Awake()
     {
         mainMenuUI.SetActive(true);
         tutorialUI.SetActive(false);
         selectUI.SetActive(false);
+        settingsUI.SetActive(false);
     }
 
     public void PlayGame()
@@ -22,6 +24,7 @@ public class MainMenu : MonoBehaviour
         mainMenuUI.SetActive(false);
         tutorialUI.SetActive(false);
         selectUI.SetActive(true);
+        settingsUI.SetActive(false);
     }
 
     public void Tutorial()
@@ -29,6 +32,7 @@ public class MainMenu : MonoBehaviour
         mainMenuUI.SetActive(false);
         tutorialUI.SetActive(true);
         selectUI.SetActive(false);
+        settingsUI.SetActive(false);
     }
 
     public void Back()
@@ -36,6 +40,14 @@ public class MainMenu : MonoBehaviour
         mainMenuUI.SetActive(true);
         tutorialUI.SetActive(false);
         selectUI.SetActive(false);
+        settingsUI.SetActive(false);
+    }
+    public void Settings()
+    {
+        mainMenuUI.SetActive(false);
+        tutorialUI.SetActive(false);
+        selectUI.SetActive(false);
+        settingsUI.SetActive(true);
     }
 
     public void QuitGame()

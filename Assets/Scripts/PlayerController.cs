@@ -13,9 +13,11 @@ public class PlayerController : MonoBehaviour
 
     Vector2 inputs;
     Rigidbody2D rb;
+    int layerMaskID;
 
     private void Start()
     {
+        layerMaskID = LayerMask.GetMask("Ground");
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -25,7 +27,7 @@ public class PlayerController : MonoBehaviour
         inputs.y = Input.GetAxis("Jump");
 
         //sprite rotation check
-        if(inputs.x != 0)
+        if (inputs.x != 0)
         {
             //right
             if (inputs.x > 0)
@@ -68,8 +70,29 @@ public class PlayerController : MonoBehaviour
         {
             //animation
             characterModel.GetComponent<Animator>().Play("Player-Jump");
+
+            Invoke("SecondaryGroundCheck", 0.1f);
         }
 
+    }
+
+    public void SecondaryGroundCheck()
+    {
+        if(grounded == false)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.6f, layerMaskID);
+            Debug.DrawRay(transform.position, Vector2.down, Color.red);
+            if (hit.collider != null)
+            {
+                float distance = Vector2.Distance(hit.point, gameObject.transform.position);
+                if (distance <= 0.6f && hit.collider.gameObject.tag == "Mid")
+                {
+                    grounded = true;
+                    print("RAY CASTED");
+                }
+
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -91,5 +114,6 @@ public class PlayerController : MonoBehaviour
         GameManager.instance.livesLeft -= 1;
         GameManager.instance.Respawn();
         Destroy(gameObject);
+        SavedAudio.instance.FindEffetsObjects();
     }
 }

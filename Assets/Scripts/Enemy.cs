@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public float speed;
     public Vector3 direction;
     public GameObject rayOrigin;
+    public GameObject sprite;
 
     private void Start()
     {
@@ -20,7 +21,7 @@ public class Enemy : MonoBehaviour
         if (hit.collider != null)
         {
             float distance = Vector2.Distance(hit.point, gameObject.transform.position);
-            if (distance <= 1 && hit.collider.gameObject.tag != "Player" || distance <= 1 && hit.collider.gameObject.tag != "Jill") 
+            if (distance <= 1 && hit.collider.gameObject.tag != "Player") 
             {
                 Flip();
             }
@@ -32,16 +33,20 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player" || collision.gameObject.tag == "Jill")
+        if(collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<PlayerController>().Death();
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Jill")
+        if (collision.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            GetComponent<AudioSource>().Play();
+
+            sprite.GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<Rigidbody2D>().gravityScale = 0;
         }
     }
 
