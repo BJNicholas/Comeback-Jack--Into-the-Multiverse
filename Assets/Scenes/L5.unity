@@ -9786,6 +9786,14 @@ PrefabInstance:
       propertyPath: musicSource
       value: 
       objectReference: {fileID: 264384530}
+    - target: {fileID: 8589213613834933066, guid: c64f1a28324ed6747893a36c4e302697, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589213614524907134, guid: c64f1a28324ed6747893a36c4e302697, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8589213614696779257, guid: c64f1a28324ed6747893a36c4e302697, type: 3}
       propertyPath: m_Pivot.x
       value: 0
