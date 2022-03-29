@@ -67,4 +67,12 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(3);
     }
+    public void Load4()
+    {
+        SceneManager.LoadScene(4);
+    }
+    public void Load5()
+    {
+        SceneManager.LoadScene(5);
+    }
 }
