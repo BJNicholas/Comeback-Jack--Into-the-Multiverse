@@ -17,7 +17,7 @@ public class DialogueBox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (isTriggered == false)
+        if (collision.CompareTag("Player") && isTriggered == false)
         {
             dialogueBox.SetActive(true);
             isTriggered = true;
@@ -26,7 +26,7 @@ public class DialogueBox : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (isTriggered == true)
+        if (collision.CompareTag("Player") && isTriggered == true)
         {
             StartCoroutine(EndDialogue());
         }
