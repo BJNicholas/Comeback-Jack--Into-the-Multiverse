@@ -185,6 +185,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1202600659b40b94aab435e41f940a7b, type: 3}
+--- !u!4 &141719054 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3896214537107827340, guid: 8e217d229cd91714bb94b7108be16f1b, type: 3}
+  m_PrefabInstance: {fileID: 229984998}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &160404917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -247,6 +252,71 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 376979536345317826, guid: af290e51b5cdbc747b968edbc70dc349, type: 3}
   m_PrefabInstance: {fileID: 2073990220}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &229984998
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1678440710}
+    m_Modifications:
+    - target: {fileID: 177095304280603787, guid: 8e217d229cd91714bb94b7108be16f1b, type: 3}
+      propertyPath: m_Name
+      value: BodyHint
+      objectReference: {fileID: 0}
+    - target: {fileID: 3392593438995696370, guid: 8e217d229cd91714bb94b7108be16f1b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3392593439658487413, guid: 8e217d229cd91714bb94b7108be16f1b, type: 3}
+      propertyPath: m_Text
+      value: I dream of making a bridge one day
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896214537107827340, guid: 8e217d229cd91714bb94b7108be16f1b, type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896214537107827340, guid: 8e217d229cd91714bb94b7108be16f1b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.0487347
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896214537107827340, guid: 8e217d229cd91714bb94b7108be16f1b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.5110801
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896214537107827340, guid: 8e217d229cd91714bb94b7108be16f1b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896214537107827340, guid: 8e217d229cd91714bb94b7108be16f1b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896214537107827340, guid: 8e217d229cd91714bb94b7108be16f1b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896214537107827340, guid: 8e217d229cd91714bb94b7108be16f1b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896214537107827340, guid: 8e217d229cd91714bb94b7108be16f1b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896214537107827340, guid: 8e217d229cd91714bb94b7108be16f1b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896214537107827340, guid: 8e217d229cd91714bb94b7108be16f1b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896214537107827340, guid: 8e217d229cd91714bb94b7108be16f1b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8e217d229cd91714bb94b7108be16f1b, type: 3}
 --- !u!4 &251634283 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 376979536345317826, guid: af290e51b5cdbc747b968edbc70dc349, type: 3}
@@ -14141,6 +14211,7 @@ Transform:
   - {fileID: 368635448}
   - {fileID: 827293989}
   - {fileID: 47659138}
+  - {fileID: 141719054}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
