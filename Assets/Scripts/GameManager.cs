@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public GameObject characterPrefab;
     public GameObject deadCharacter;
 
+    public float respawnDelay;
+
     [Header("Level Details")]
     public Transform respawnPoint;
 
@@ -27,8 +29,7 @@ public class GameManager : MonoBehaviour
     {
         if(livesLeft > 0)
         {
-            GameObject newPlayer = Instantiate(characterPrefab, respawnPoint.position, Quaternion.identity);
-            Camera.main.GetComponent<CameraController>().target = newPlayer.transform;
+            StartCoroutine(RespawnCoroutine());
         }
         else
         {
@@ -37,6 +38,26 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0;
             Camera.main.GetComponent<CameraController>().target = respawnPoint.transform;
         }
+    }
+
+    public IEnumerator RespawnCoroutine()
+    {
+        /*solution 1 = speed
+        GameObject newPlayer = Instantiate(characterPrefab, respawnPoint.position, Quaternion.identity);
+        Camera.main.GetComponent<CameraController>().target = newPlayer.transform;
+        newPlayer.GetComponent<PlayerController>().speed = 0;
+
+        yield return new WaitForSeconds(respawnDelay);
+
+        newPlayer.GetComponent<PlayerController>().speed = 10;
+        */
+        GameObject newPlayer = Instantiate(characterPrefab, respawnPoint.position, Quaternion.identity);
+        Camera.main.GetComponent<CameraController>().target = newPlayer.transform;
+        newPlayer.GetComponent<PlayerController>().enabled = false;
+
+        yield return new WaitForSeconds(respawnDelay);
+
+        newPlayer.GetComponent<PlayerController>().enabled = true;
     }
 
     
