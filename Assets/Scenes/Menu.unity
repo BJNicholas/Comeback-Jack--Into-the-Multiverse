@@ -5445,7 +5445,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Alpha Build
+  m_Text: Gold Build
 --- !u!222 &2131278099
 CanvasRenderer:
   m_ObjectHideFlags: 0
