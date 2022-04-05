@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
         */
         GameObject newPlayer = Instantiate(characterPrefab, respawnPoint.position, Quaternion.identity);
         Camera.main.GetComponent<CameraController>().target = newPlayer.transform;
+        newPlayer.GetComponent<PlayerController>().characterModel.GetComponent<Animator>().Play("Player-Respawn");
         newPlayer.GetComponent<PlayerController>().enabled = false;
 
         yield return new WaitForSeconds(respawnDelay);
