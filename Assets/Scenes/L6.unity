@@ -6433,6 +6433,7 @@ MonoBehaviour:
   coinsCollected: 0
   characterPrefab: {fileID: 1023133123477743684, guid: ad7003cf0676b4647a928a94d24f7ad3, type: 3}
   deadCharacter: {fileID: 3270109207334350892, guid: 535c02b45e3f8604fbe623eaf4a33829, type: 3}
+  respawnDelay: 2
   respawnPoint: {fileID: 772053337}
 --- !u!4 &574076563
 Transform:
